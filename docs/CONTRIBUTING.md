@@ -1,4 +1,7 @@
+# contributing
 
+>[!NOTE]
+> You will need to install go for either [windows](https://go.dev/dl/go1.27.1.windows-amd64.msi) or linux `sudo apt install golang-go`
 
 ## Forking, Committing, and Pushing
 
@@ -27,6 +30,16 @@ Examples:
 
 ### Make Your Changes
 Implement your changes in small, focused commits.
+
+Then build the source code with the following command and go installed:
+```sh
+go build -o bin/anvil ./cmd/anvil
+```
+Then try out your features in the repl with 
+```sh
+./bin/anvil
+```
+or make a `.an` file and run `./bin/anvil example.an`
 
 ---
 
