@@ -25,12 +25,19 @@ jobs:
       - name: Run Anvil Bot
         id: bot
         run: |
+          set +e
           REPORT=$(./anvilbot)
+          EXIT_CODE=$?
+          set -e
+
           {
             echo "report<<EOF"
             echo "$REPORT"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
+
+          echo "exitcode=$EXIT_CODE" >> "$GITHUB_OUTPUT"
+
 
       - name: Post Anvil Bot comment
         uses: peter-evans/create-or-update-comment@v3
