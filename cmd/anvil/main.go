@@ -17,7 +17,7 @@ func main() {
 		filename := os.Args[1]
 		bytes, err := os.ReadFile(filename)
 		if err != nil {
-			fmt.Printf("Error opening file %s: %s\n", filename, err
+			fmt.Printf("Error opening file %s: %s\n", filename, err)
 			os.Exit(1)
 		}
 
